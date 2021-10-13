@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>PSKblog</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="import" href="top.html">
+    <script src="layui/layui.js"></script>
+</head>
+
+<body background="img/keli.png">
+
+    <!--导航条-->
+  <div class="margin-left:20px">
+    <ul class="layui-nav " lay-filter="">
+
+      <li class="layui-nav-item layui-col-md-offset9"><a href="/homepage">首页</a></li>
+      <li class="layui-nav-item"><a href="/problems">刷题记录</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">学习笔记</a>
+        <dl class="layui-nav-child">
+          <!-- 二级菜单 -->
+          <dd><a href="/linux">Linux基础</a></dd>
+          <dd><a href="/layui">LayUI框架</a></dd>
+          <dd><a href="/acm">ACM-ICPC训练</a></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+  <!--导航条-->
+  <!--侧边导航-->
+  <ul class="layui-nav layui-nav-tree layui-nav-side" style="position: fixed;" lay-filter="test">
+    <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+    <li class="layui-nav-item"><a href="" style="font-size: x-large;font-style: italic;text-align: center;">Pskyfly's Blog<a>
+    </li>
+      <li class="layui-nav-item" style="text-align: center;"><a href="/acm/week1" style="font-size: 25px;">第一周</a></li>
+      <li class="layui-nav-item" style="text-align: center;"><a href="/acm/week2" style="font-size: 25px;">第二周</a></li>
+      <li class="layui-nav-item" style="text-align: center;"><a href="/acm/week3" style="font-size: 25px;">第三周</a></li>
+      <li class="layui-nav-item" style="text-align: center;"><a href="/acm/week4" style="font-size: 25px;">第四周</a></li>
+      <li class="layui-nav-item" style="text-align: center;"><a href="/acm/week5" style="font-size: 25px;">第五周</a></li>
+    <li class="layui-nav-item" style="text-align: center;position:absolute;top: 480px;"><a
+        style="font-size: 40px;font-family: Edwardian Script ITC;">Mathematics</a></li>
+    <li class="layui-nav-item" style="text-align: center;position:absolute;top: 530px;"><a
+        style="font-size: 40px;font-family: Edwardian Script ITC;">And</a></li>
+    <li class="layui-nav-item" style="text-align: center;position:absolute;top: 580px;"><a
+        style="font-size: 40px;font-family: Edwardian Script ITC;">Algorithms</a></li>
+  </ul>
+  <!--侧边导航-->
+
+    <!-- 引入 layui.js 的 <script> 标签最好放置在 html 末尾 -->
+    <script>
+        layui.use('element', function () {
+            var element = layui.element;
+        });
+    </script>
+</body>
+
+</html>

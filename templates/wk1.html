@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width initial-scale=1'>
+
+  <link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext'
+    rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="layui/css/layui.css" id="layUI">
+  <link rel="stylesheet" href="/css/typora.css" id="Typora">
+  <script src="layui/layui.js"></script>
+
+  <title>第一周 学习心得 ——李天航</title>
+</head>
+
+<body background="img/keli.png">
+  <!--导航条-->
+  <div class="margin-left:20px">
+    <ul class="layui-nav" lay-filter="">
+      <li class="layui-nav-item"><a style="font-size: large;font-style: italic;">Pskyfly's Blog<a></li>
+      <li class="layui-nav-item layui-col-md-offset8"><a href="/homepage">首页</a></li>
+      <li class="layui-nav-item"><a href="/problems">刷题记录</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">学习笔记</a>
+        <dl class="layui-nav-child">
+          <!-- 二级菜单 -->
+          <dd><a href="/linux">Linux基础</a></dd>
+          <dd><a href="/layui">LayUI框架</a></dd>
+          <dd><a href="/acm">ACM-ICPC训练</a></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+  <!--导航条-->
+  <div class='typora-export-content'>
+    <div id='write' class=''>
+      <h1 id='第一周-学习心得-------李天航'><span>第一周 学习心得 ——李天航</span></h1>
+      <h2 id='贪心算法'><span>贪心算法</span></h2>
+      <p>
+        <span>贪心算法来解题主要需要找到合适的贪心策略，对于不同的题，贪心策略多种多样且容易与其他算法相结合，所以学习贪心算法需要多积累经验。找到一个合适的贪心策略（玄学）可以使得问题极大得简化。做题的时候需要多注意题目的范围，此外我发现STL中的vector比数组慢了成百上千倍，因此尽量少使用vector多用数组，不然哪里被卡了都不知道qwq。</span>
+      </p>
+      <h2 id='差分与前缀和'><span>差分与前缀和</span></h2>
+      <p><span>差分和前缀和是一组逆运算，两者经常联系在一起。差分用于区间数据的整体加减，前缀和用于对区间进行快速求和。而如果需要动态的查询和修改，则需要将两者结合起来并用线段树优化。一维差分建立是dif[i]=a[i]-a[i-1],
+          在区间[l,r]的数加上x则为，</span><code>dif[l]+=x,dif[r+1]-=x</code><span>，具体就某个数就需要求他的前缀和。二维差分则为</span><code>dif[i] [j] =a[i] [j]- a[i-1] [j] - a[i] [j-1]+a[i-1] [j-1]</code><span>.
+          而求和则为</span><code>a[i] [j] =dif[i] [j]+dif[i-1] [j]+dif[i] [j-1]-dif[i-1] [j-1]</code><span>. </span></p>
+      <p><span>想不到边界值怎么取的时候可以画一个图来方便判断，前缀和的范围为左上角（0,0）到（i,j），而差分的范围为（i,j）到无穷大，方向正好相反。</span></p>
+      <h2 id='二分和双指针'><span>二分和双指针</span></h2>
+      <p>
+        <span>二分算法是一种高效的查找算法。当一个序列中的数在经过一个函数的变换后能分成两段，且分界点就是我们要查找的数，这时候就需要用到二分查找，可以将时间复杂度由O(n)缩短为O(logn)。而双指针算法是暴力算法的一种改进，也就是在两个指针在移动时，能否让其中一个满足单调性，如果可以就可以在上一次的位置开始移动而不需要从头开始，将时间复杂度由O(n^2)缩短为O(n)。</span>
+      </p>
+      <h2 id='栈队列堆'><span>栈，队列，堆</span></h2>
+      <p>
+        <span>这三个是算法中很常用的数据结构，通过他们独特的数据处理方式可以让算法得到有效的优化。栈的特性是先=后进先出，队列的特性是的先进先出，堆的特性是总是让优先级最高的数据出来，插入的复杂度为O(logn)。</span>
+      </p>
+      <h2 id='搜索'><span>搜索</span></h2>
+      <p>
+        <span>经过搜索算法的训练后，我最深的体会是：模板是真的好用。尤其是bfs的模板，用那个模板就可以解决大部分需要用到广搜的问题，板子可以帮我们处理好许多细节，于是我们便可以把心思更多地用在题目上。搜索算法一般都比较暴力，需要搭配合适的剪枝函数，具体的题目需要具体地分析。</span>
+      </p>
+      <p></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </div>
+  </div>
+</body>
+
+</html>

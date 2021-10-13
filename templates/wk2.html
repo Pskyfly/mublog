@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width initial-scale=1'>
+
+  <link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext'
+    rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="layui/css/layui.css" id="layUI">
+  <link rel="stylesheet" href="/css/typora.css" id="Typora">
+  <script src="layui/layui.js"></script>
+
+  <title>第二周学习报告</title>
+</head>
+
+<body>
+  <!--导航条-->
+  <div class="margin-left:20px">
+    <ul class="layui-nav" lay-filter="">
+      <li class="layui-nav-item"><a style="font-size: large;font-style: italic;">Pskyfly's Blog<a></li>
+      <li class="layui-nav-item layui-col-md-offset8"><a href="/homepage">首页</a></li>
+      <li class="layui-nav-item"><a href="/problems">刷题记录</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">学习笔记</a>
+        <dl class="layui-nav-child">
+          <!-- 二级菜单 -->
+          <dd><a href="/linux">Linux基础</a></dd>
+          <dd><a href="/layui">LayUI框架</a></dd>
+          <dd><a href="/acm">ACM-ICPC训练</a></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+  <!--导航条-->
+
+  <div class='typora-export-content'>
+    <div id='write' class=''>
+      <h1 id='第二周学习报告'><span>第二周学习报告</span></h1>
+      <h2 id='分治法'><span>分治法</span></h2>
+      <p>
+        <span>分治法顾名思义分而治之，将一个问题分成若干段（一般是两段）递归求解，然后再将不同区间进行总结和联合，然后得到最终的答案。最典型的例子是归并排序。许多问题都能按照归并排序的基础上进行修改。分治法其实是算法的一个框架，至于怎么分，怎么治，还需要配合其他算法。</span>
+      </p>
+      <h2 id='数学一）'><span>数学（一）</span></h2>
+      <p>
+        <span>数学真是太奇妙了（逃）。数学问题都需要先推公式，转化成我们能求解的问题（不会求解转化了也不会QWQ）。然后还需要注意一些细节。比如要不要用ll，乘法取模前会不会爆ll，还有许多边界问题。第一次的数学学习应用了整除和乘法逆元相关的问题。整除中感觉比较重要的是如何进行区间分块，也就是向下取整的商一般会满足某种性质并能用于计算（比如相等或者成等差数列）。而乘法逆元用于在推公式时，在需要取模的时候出现除法时，转化成乘以乘法逆元即可。</span>
+      </p>
+      <h2 id='数学二）'><span>数学（二）</span></h2>
+      <p>
+        <span>第二次的数学学习讲授了质数的许多性质，埃氏筛，线性筛和欧拉函数。这些都是在做题过程中常用的性质。埃氏筛的复杂度为O（nloglogn）接近于O（n），它是从前往后筛去质数的倍数，从而达到目的。而线性筛则保证每个合数都是被最小质因数筛去的，因而复杂度为O（n）。这种穷举倍数的方法还可以用于解决约数和，约数个数等问题。而线性筛和质因数有关，用于解决和质因数相关的问题。欧拉函数是与n互质的所有数的数目，在分解质因数后，可以根据公式求得约数之和，约数个数，以及欧拉函数等。</span>
+      </p>
+      <h2 id='组合数学'><span>组合数学</span></h2>
+      <p>
+        <span>组合数学主要介绍了卡特兰数，隔板法，容斥原理，卢卡斯定理。卡特兰数主要用于解决出入问题，有入才能有出，例如栈的出栈入栈，数的加减等等。隔板法用于解决分组问题和排列问题，可以满足排列需要一些特殊要求。容斥原理用于解决不同问题间有交集的问题，求出各个问题的交集，然后加上或者减去重复的问题，最终得到总问题的解。</span>
+      </p>
+      <p><span>卡特兰数的公式：</span></p>
+      
+      <h2 id='图论基础'><span>图论基础</span></h2>
+      <p>
+        <span>图论“基础”学习了tarjan和拓扑排序。虽然就介绍了两个算法，但是这两个算法哪怕是板子题也挺难理解和转换的。tarjan可以衍生出来割点割边还有桥等等。强连通分量，即图的一个子集，其中每个点都可以到达其他任意一个点。tarjan的目的是缩点，找出整个图的所有强联通分量，用祖先结点代表整个强连通分量，达到“缩”的目的。tarjan中最重要的两个数组是low和dfn。low[x]代表从x出发能找到的最小的时间戳（次序）或者说是x所在强连通分量中最小的时间戳，dfn[x]代表当前结点的时间戳,每个结点的时间戳都不一样。如果dfn[x]==low[x],意思是从x开始形成了一个环，同时也代表x是这个强连通分量的祖先结点。割点指的是若将联通无向图中的某点及其连接的边删去后，图中连通分量个数增加，则称这个点为割点。如果有一条搜索路径为fa-&gt;x-&gt;k，且low[k]==dfn[x]，意思是说从k开始搜，能搜到的最前面的点就是x，而不是比x更前面的点（如果有，x就不是割点），也就是x和k在同一个强联通分量中。如果low[k]&gt;dfn[x],意思是k所在强联通分量的的所有点的次序都比x大，也就是必须要经过x-&gt;k这条边，所以它是桥。（理解性记忆即可）因为是无向图，访问完k后，还会回头用dfn[x]更新low[k]，递归完成后仍然保持不变，说明没有比x更小的点更新过k，如果fa能不经过x到达k，那么low[k]就会等与dfn[fa]而非dfn[x]此时x就不是割点。在判断桥的时候，要保证避免low[k]被dfn[x]直接更新,否则一定会满足low[k]&lt;=dfn[x]，在此基础上满足low[k]&gt;dfn[x]，也就是k之后的点都无法到达x前面的点，则x-&gt;k就是桥。</span>
+      </p>
+
+      <p>&nbsp;</p>
+    </div>
+  </div>
+</body>
+
+</html>

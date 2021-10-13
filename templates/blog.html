@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>PSKblog</title>
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <script src="layui/layui.js"></script>
+</head>
+
+<body>
+
+  <!--导航条-->
+  <div class="margin-left:20px">
+    <ul class="layui-nav" lay-filter="">
+      <li class="layui-nav-item"><a style="font-size: large;font-style: italic;">Pskyfly's Blog<a></li>
+      <li class="layui-nav-item layui-col-md-offset8"><a href="/homepage">首页</a></li>
+      <li class="layui-nav-item"><a href="/problems">刷题记录</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">学习笔记</a>
+        <dl class="layui-nav-child">
+          <!-- 二级菜单 -->
+          <dd><a href="/linux">Linux基础</a></dd>
+          <dd><a href="/layui">LayUI框架</a></dd>
+          <dd><a href="/acm">ACM-ICPC训练</a></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+  <!--导航条-->
+
+  <!-- 引入 layui.js 的 <script> 标签最好放置在 html 末尾 -->
+  <script>
+    layui.use('element', function () {
+      var element = layui.element;
+    });
+    layui.use('layer', function () {
+      var layer = layui.layer;
+      layer.msg("hi");
+    })
+  </script>
+</body>
+
+</html>
